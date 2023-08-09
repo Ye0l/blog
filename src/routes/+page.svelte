@@ -1,2 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    export let data;
+</script>
+<div class="background">
+    aa: {data.test}
+</div>
+<style>
+    .background {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+    }
+</style>

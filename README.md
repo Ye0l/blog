@@ -6,4 +6,14 @@
     - 공식 문서에서 `static-adapter` 사용시 +layout.js 파일에 `export const prerender = true;`를 추가하라는 이야기가 있어서 적용했는데 아마 그게 이쪽 설정인 것 같음.
 
 ## 해결해야 할 것들
-- [ ] svelte의 페이지 전환 방식이... 페이지를 전환하는 척만 하는 걸로 알고있음. 그래서 route할 때.. 실제론 없는 경로가 주소창에 적히고 그 페이지를 보여주게 됨. 그 상황에서 `F5` ... firebase에서 NOT FOUND를 뱉어버린다. 이거 어떻게 해결하지?
+- [x] svelte의 페이지 전환 방식이... 페이지를 전환하는 척만 하는 걸로 알고있음. 그래서 route할 때.. 실제론 없는 경로가 주소창에 적히고 그 페이지를 보여주게 됨. 그 상황에서 `F5` ... firebase에서 NOT FOUND를 뱉어버린다. 이거 어떻게 해결하지?
+    - 이게 어떻게 되는 건지 모르겠는데;; `firebase.json` 파일에 옵션을 추가해서 해결했음.
+    ```json
+        "rewrites": [
+            {
+                "source": "**",
+                "destination": "/index.html",
+            }
+        ]
+    ```
+    정확한 구조는 모름.. 출처는 이쪽 https://stackoverflow.com/questions/68701607/sevltekit-404-error-when-refreshing-dynamic-route

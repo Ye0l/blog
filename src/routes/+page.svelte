@@ -1,6 +1,7 @@
 <script>
     export let data;
 </script>
+{data.test}
 <div class="background">
     aa: {data.test}
 </div>

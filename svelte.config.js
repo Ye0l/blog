@@ -12,7 +12,11 @@ const config = {
 			fallback: undefined,
 			precompress: false,
 			strict: true,
-		})
+		}),
+		alias: {
+			$db: './src/db',
+
+		}
 	}
 };
 

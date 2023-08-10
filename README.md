@@ -1,38 +1,9 @@
-# create-svelte
+# kstr.dev
+## STACK
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## 알게된 것들
+- firebase 배포시 build 디렉토리 내부의 자료들만 배포하게 되어있고, `+ .. server.js` 파일 내부의 코드들은 `static-adapter`의 경우 사전 로드.. 그러니까 빌드 당시에 서버에서 불러온 데이터를 데이터로 직접 박아놓게 되는 듯함.
+    - 공식 문서에서 `static-adapter` 사용시 +layout.js 파일에 `export const prerender = true;`를 추가하라는 이야기가 있어서 적용했는데 아마 그게 이쪽 설정인 것 같음.
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## 해결해야 할 것들
+- [ ] svelte의 페이지 전환 방식이... 페이지를 전환하는 척만 하는 걸로 알고있음. 그래서 route할 때.. 실제론 없는 경로가 주소창에 적히고 그 페이지를 보여주게 됨. 그 상황에서 `F5` ... firebase에서 NOT FOUND를 뱉어버린다. 이거 어떻게 해결하지?

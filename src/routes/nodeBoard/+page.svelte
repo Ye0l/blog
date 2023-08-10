@@ -3,5 +3,9 @@
 </script>
 
 {#each data.data as e}
-    {e.text}
+    <div class="card">
+        <div class="card-body">
+            {e.text}
+        </div>
+    </div>
 {/each}
